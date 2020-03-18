@@ -10,8 +10,6 @@ You need this macro for checking
   %let rc=%qsysfunc(dosubl(&arg));
 %mend dosubl;
 
-
-
 SAS Forum
 https://communities.sas.com/t5/SAS-Programming/How-to-use-syscall-scan/m-p/632558
 
@@ -83,7 +81,7 @@ NAME=
                                              |___/
 ;
 
-options missing='.';
+options missing='0';
 
 %let total=100;
 %let wages=100000;
@@ -91,10 +89,6 @@ options missing='.';
 
 * change all to missing;
 %syscall missing(total,wages,name);
-
-options missing='0';
-%syscall missing(total,wages,name);
-options missing='.';
 
 %put &=total;
 %put &=wages;
@@ -114,6 +108,7 @@ NAME=
 
 RES=0
 
+Optins missing='.';
 
 *          _ _            _
   ___ __ _| | |  ___  ___| |_
