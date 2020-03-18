@@ -85,7 +85,7 @@ Interesting uses of macro function syscall with sas call routines
                                                  |___/
     ;
 
-    options missing='.';
+    options missing='0';
 
     %let total=100;
     %let wages=100000;
@@ -94,10 +94,7 @@ Interesting uses of macro function syscall with sas call routines
     * change all to missing;
     %syscall missing(total,wages,name);
 
-    options missing='0';
-    %syscall missing(total,wages,name);
-    options missing='.';
-
+    
     %put &=total;
     %put &=wages;
     %put &=name ;
